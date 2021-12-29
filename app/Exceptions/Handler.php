@@ -55,6 +55,22 @@ class Handler extends ExceptionHandler
                     'errors' => $e->getMessage()
                 ], 403);
             }
+
+            if ($e instanceof \Illuminate\Database\Eloquent\ModelNotFoundException || $e instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
+                return response([
+                    'status' => 'error',
+                    'errors' => 'Resource Not found'
+                ], 404);
+            }
+
+            if ($e instanceof \Illuminate\Auth\AuthenticationException) {
+                return response([
+                    'status' => 'error',
+                    'errors' => $e->getMessage()
+                ], 401);
+            }
+
+            return response(['status' => 'Error', 'error' => 'Something went wrong'], 500);
         }
 
         parent::render($request, $e);
