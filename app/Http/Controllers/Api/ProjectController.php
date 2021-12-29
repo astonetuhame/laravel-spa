@@ -6,6 +6,7 @@ use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Project as ProjectResource;
+use App\Http\Resources\ProjectCollection;
 
 class ProjectController extends Controller
 {
@@ -18,9 +19,9 @@ class ProjectController extends Controller
     {
         //
         $projects = Project::where('user_id', auth()->user()->id)
-            ->select(['id', 'name', 'created_at', 'updated_at'])
+            //   ->select(['id', 'name', 'created_at', 'updated_at'])
             ->get();
-        return $projects;
+        return new ProjectCollection($projects);
     }
 
     /**
