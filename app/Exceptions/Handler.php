@@ -38,4 +38,25 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function render($request, Throwable $e)
+    {
+        if ($request->is('api*')) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                return response([
+                    'status' => 'error',
+                    'errors' => $e->errors()
+                ], 422);
+            }
+
+            if ($e instanceof \Illuminate\Auth\Access\AuthorizationException) {
+                return response([
+                    'status' => 'error',
+                    'errors' => $e->getMessage()
+                ], 403);
+            }
+        }
+
+        parent::render($request, $e);
+    }
 }
