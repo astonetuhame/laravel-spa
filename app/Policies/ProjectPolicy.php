@@ -34,6 +34,18 @@ class ProjectPolicy
     }
 
     /**
+     * Determine whether the user can uplaod image for a specific project.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Project  $project
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function upload(User $user, Project $project)
+    {
+        return $user->id === $project->user_id;
+    }
+
+    /**
      * Determine whether the user can create models.
      *
      * @param  \App\Models\User  $user
