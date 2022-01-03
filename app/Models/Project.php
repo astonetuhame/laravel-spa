@@ -15,4 +15,18 @@ class Project extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+
+    public function getImagePathAttribute()
+    {
+        if (is_null($this->image)) {
+            return null;
+        }
+
+        return asset('storage/' . $this->image);
+    }
 }
