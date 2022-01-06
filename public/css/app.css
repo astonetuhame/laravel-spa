@@ -277,6 +277,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   right: 0px;
 }.left-0 {
   left: 0px;
+}.m-4 {
+  margin: 1rem;
 }.mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -369,6 +371,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.375rem;
 }.rounded-none {
   border-radius: 0px;
+}.rounded {
+  border-radius: 0.25rem;
 }.rounded-t-md {
   border-top-left-radius: 0.375rem;
   border-top-right-radius: 0.375rem;
@@ -410,6 +414,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(30 64 175 / var(--tw-bg-opacity));
 }.p-6 {
   padding: 1.5rem;
+}.p-4 {
+  padding: 1rem;
 }.py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -443,6 +449,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }.font-semibold {
   font-weight: 600;
 }.font-bold {
