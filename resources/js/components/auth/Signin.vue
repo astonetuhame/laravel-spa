@@ -85,9 +85,9 @@ export default {
             errorMsg: "",
         };
     },
-    computed: {
-        ...mapGetters(["authenticated"]),
-    },
+    // computed: {
+    //     ...mapGetters(["authenticated"]),
+    // },
     methods: {
         async handleLogin() {
             this.errorMsg = "";
@@ -104,10 +104,10 @@ export default {
             }
         },
     },
-    mounted() {
-        if (this.authenticated) {
-            this.$router.push({ name: "dashboard" });
-        }
-    },
+    // mounted() {
+    //     if (this.authenticated) {
+    //         this.$router.push({ name: "dashboard" });
+    //     }
+    // },
 };
 </script>
