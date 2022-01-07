@@ -27,7 +27,7 @@ const router = createRouter({
             component: ProjectDetail,
             name: "project-detail",
             meta: { requiresAuth: true },
-            // props: true,
+            props: true,
         },
     ],
 });
