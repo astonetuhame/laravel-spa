@@ -60,8 +60,8 @@ export default {
                     this.$emit("project-added");
                 }
             } catch (e) {
-                if (e.response.data.error.name[0].length > 0) {
-                    this.errorMsg = e.response.data.error.name[0];
+                if (e.response.data.errors.name[0].length > 0) {
+                    this.errorMsg = e.response.data.errors.name[0];
                 }
             }
         },
